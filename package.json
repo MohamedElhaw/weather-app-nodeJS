@@ -1,0 +1,17 @@
+{
+  "name": "weather-journal-app_2nd_rev",
+  "version": "1.0.0",
+  "description": "## Overview This project is asynchronous web app that uses weather Web API (http://api.openweathermap.org) and user data to dynamically update the UI.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}

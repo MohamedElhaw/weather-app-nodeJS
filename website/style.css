@@ -1,0 +1,211 @@
+body,html{
+    background: #e3dcff;
+    font-family: 'Roboto', sans-serif;
+    margin: auto;
+    padding: auto;
+    background-image: url(img/weather.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100%;
+}
+
+.mainbar{
+    background: rgba(165, 42, 42,0.8);
+    margin: 0.5em 0 0 1em;
+    padding: 0.7em;
+    width: fit-content;
+    border-radius: 3px;
+    cursor:pointer;
+    text-align: center;
+}
+.mainbar a{
+    color:white;
+    text-decoration: none;
+}
+.mainbar:hover{
+    background:rgba(218, 57, 57, 0.8);
+}
+#app{
+    display: grid;
+    color:black;
+    grid-gap: 0.5em;
+    /* font-size: 1em; */
+    font-weight: bold;
+    border: 5px solid brown;
+    border-radius: 2vw;
+    margin: 1vh auto 0;
+    padding: 3vh;
+    height: 60vh;
+    width: 50%;
+    grid-template-rows: 20% 25% 13% 33%;
+}
+.holder-zip, .holder-feel,.holder-entry { 
+    /* height:100%; */
+    display: flex;
+    flex-direction: column;
+} 
+#zip{
+    width: 100%;
+    height: 100%;
+}
+
+.holder-entry{
+    background: rgba(240, 212, 58, 0.7);
+    /* height:100%; */
+    overflow: auto;
+}
+#feelings{
+    resize: none;
+    width: 100%;
+    height: 100%;
+    padding: 0%;
+    background: rgba(51, 57, 84,0.8);
+    color: #f0d43a;
+    font:inherit;
+}
+#entryHolder{
+    padding-left: 0.5em;
+    height: 100%;
+    }
+#date{
+color: blue;
+}
+
+#temp{
+color:rgb(0, 133, 40);
+}
+
+#feeling-entry{
+color: red;
+}
+
+.headline {
+text-align: center;
+padding-top: 15px;
+margin: auto;
+}
+.title{
+    margin-bottom: 1%;
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label{
+    display:block;
+    font-size: inherit;
+}
+
+input{
+    display:block;
+    width: 100px;
+    background: rgba(51, 57, 84,0.8);
+    color: #f0d43a;
+    font-size: inherit;
+    border: none;
+    padding: 0%;
+}
+#generate{
+    display: flex;
+}
+
+#generate-btn{
+    background: rgba(0, 157, 168,0.8);
+    font-size: inherit;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#generate-btn:hover{
+    background: rgba(37, 222, 255,0.8);
+}
+.wrap-invalid{
+    display: flex;
+    align-items: center;
+    margin-left: 0.7em;
+    background-color: #ff0505a8;
+}
+#invalidText{
+    color:white;
+    text-align: center; 
+}
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */
+    color: #f0d43a;
+    font-family: inherit;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #f0d43a;
+    font-family: inherit;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #f0d43a;
+    font-family: inherit;
+}
+.footer{
+    width: 100%;
+    background-color: rgba(51, 57, 84,0.8);
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.footer p{
+    padding: 3px;
+    margin: 0;
+    color:white;
+}
+.footer img{
+    cursor: pointer;
+    padding: 1px;
+}
+@media only screen and (max-width:555px) {
+    body{
+        font-size: small;
+    }
+    #app{
+        grid-template-rows: 20% 25% 23% 28%;
+    }
+    label,input {
+        font-size: small;
+    }
+    #feelings, .holder-entry, #generate{
+        font-size: smaller;
+    }
+    #generate{
+        display: flex;
+        flex-direction: column;
+    }
+    #generate-btn{
+        width:fit-content;
+        height:60%;
+        margin-bottom: 5%;
+    }
+    .wrap-invalid{
+        margin: 0;
+    }
+    #invalidText{
+        text-align: left;
+        overflow: auto;
+    }
+}
+@media only screen and (max-height:505px) {
+    #app{
+        height: 50%;
+    }
+    .mainbar{
+        font-size: smaller;
+        padding: 0.2em;
+    }
+    .footer{
+        font-size: 0.7em;
+    }
+}
