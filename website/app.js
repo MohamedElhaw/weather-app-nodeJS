@@ -3,7 +3,8 @@ const apiURL='https://api.openweathermap.org/data/2.5/weather?q=' //URL for weat
 const apiKey='&appid=b8c88e3416e4d3d346d00cedd63c0c98'; //API key
 const dateElement=document.getElementById('date'); //pass date Element to const variable
 const tempElement=document.getElementById('temp');//pass temp Element to const variable
-const feelingElement =document.getElementById('feelings');//pass content Element to const variable
+const feelingElement =document.getElementById('feelings');// Save feeling Element to const variable
+const feelingEntryElement= document.getElementById('feeling-entry'); //Save feeling-Entry Element to const variable
 const cityNameElement =document.getElementById('cityName'); //Get the city name element
 const ivalidElement= document.getElementById("invalidText"); // Get the ivalid text element
 
@@ -78,7 +79,7 @@ const updateUI=async() =>{
     /* Update UI elements */
     dateElement.innerHTML= `Date (D/M/Y): ${serverData.date}`;
     tempElement.innerHTML= `Temp: ${serverData.temp} c`;
-    feelingElement.innerHTML= serverData.feeling!==""? `Feeling: ${serverData.feeling}`:""; //update feeling only in case it was enetered by the user
+    feelingEntryElement.innerHTML= serverData.feeling!==""? `Feeling: ${serverData.feeling}`:""; //update feeling only in case it was enetered by the user
   } catch (error) {
     console.log('The error', error); //log the error
   }
@@ -88,7 +89,7 @@ const updateUI=async() =>{
 const resetUI =()=>{
   dateElement.innerHTML= ""; //empty date element
   tempElement.innerHTML= ""; //empty temp element
-  feelingElement.innerHTML=""; ////empty feeling element
+  feelingEntryElement.innerHTML=""; ////empty feeling element
 }
 /** Feeling Elemeny listener to events focus and focus*/
 feelingElement.addEventListener('focus', ()=>feelingElement.placeholder='')
