@@ -98,7 +98,11 @@ feelingElement.addEventListener('focusout', ()=>{
     feelingElement.placeholder='Enter your feelings here';
   }
 })
-
+/** Listener to reset feeling element if the city is changed*/
+cityNameElement.addEventListener('change', ()=> {
+  feelingElement.value='';
+  feelingElement.placeholder='Enter your feelings here';
+})
 
     
 
