@@ -10,22 +10,6 @@ body,html{
     height:100%;
 }
 
-.mainbar{
-    background: rgba(165, 42, 42,0.8);
-    margin: 0.5em 0 0 1em;
-    padding: 0.7em;
-    width: fit-content;
-    border-radius: 3px;
-    cursor:pointer;
-    text-align: center;
-}
-.mainbar a{
-    color:white;
-    text-decoration: none;
-}
-.mainbar:hover{
-    background:rgba(218, 57, 57, 0.8);
-}
 #app{
     display: grid;
     color:black;
@@ -34,20 +18,28 @@ body,html{
     font-weight: bold;
     border: 5px solid brown;
     border-radius: 2vw;
-    margin: 1vh auto 0;
+    margin: 2vh auto 0;
     padding: 3vh;
     height: 60vh;
     width: 50%;
-    grid-template-rows: 20% 25% 13% 33%;
+    grid-template-rows: 15% 25% 20% 30%;
 }
-.holder-zip, .holder-feel,.holder-entry { 
+.holder-cityname, .holder-feel,.holder-entry { 
     /* height:100%; */
     display: flex;
     flex-direction: column;
 } 
-#zip{
+/*#zip{
     width: 100%;
     height: 100%;
+}*/
+
+#cityName{
+    width: 100%;
+    height: 50%;
+    background: rgba(51, 57, 84,0.8);
+    color: #ffffff;
+    font-size:medium;
 }
 
 .holder-entry{
@@ -57,15 +49,15 @@ body,html{
 }
 #feelings{
     resize: none;
-    width: 100%;
     height: 100%;
-    padding: 0%;
+    padding: 0.5em;
     background: rgba(51, 57, 84,0.8);
     color: #f0d43a;
+    font-size:Large;
     font:inherit;
 }
 #entryHolder{
-    padding-left: 0.5em;
+    padding-left: 0.7em;
     height: 100%;
     }
 #date{
@@ -83,10 +75,10 @@ color: red;
 .headline {
 text-align: center;
 padding-top: 15px;
-margin: auto;
+margin: 2px auto 20px;
 }
 .title{
-    margin-bottom: 1%;
+    padding: 0.5em;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
@@ -109,14 +101,20 @@ input{
 }
 
 #generate-btn{
-    background: rgba(0, 157, 168,0.8);
-    font-size: inherit;
+    display:block;
+    background: rgba(0, 157, 168,0.95);
+    font-size: medium;
     border: none;
     cursor: pointer;
+    border: rgba(0, 157, 168,0.95) 2px solid;
     border-radius: 5px;
+    padding: 20px 50px;
+    height:fit-content;
 }
 #generate-btn:hover{
-    background: rgba(37, 222, 255,0.8);
+    display: block;
+    background: rgba(0, 217, 255, 0.95);
+    border: rgb(255, 255, 255) 2px solid;
 }
 .wrap-invalid{
     display: flex;
@@ -124,10 +122,7 @@ input{
     margin-left: 0.7em;
     background-color: #ff0505a8;
 }
-#invalidText{
-    color:white;
-    text-align: center; 
-}
+
 /* Reset style for HTML element on active to have no border*/
 input:focus,
 select:focus,
@@ -185,8 +180,8 @@ button:focus {
         flex-direction: column;
     }
     #generate-btn{
-        width:fit-content;
-        height:60%;
+        width:100%;
+        padding: 10px;
         margin-bottom: 5%;
     }
     .wrap-invalid{

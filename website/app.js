@@ -1,10 +1,10 @@
 /* Global Variables */
-const apiURL='https://api.openweathermap.org/data/2.5/weather?zip=' //URL for weather API
+const apiURL='https://api.openweathermap.org/data/2.5/weather?q=' //URL for weather API
 const apiKey='&appid=b8c88e3416e4d3d346d00cedd63c0c98'; //API key
 const dateElement=document.getElementById('date'); //pass date Element to const variable
 const tempElement=document.getElementById('temp');//pass temp Element to const variable
-const feelingElement =document.getElementById('feeling-entry');//pass content Element to const variable
-const cityZipCodeElement =document.getElementById('zip'); //Get the zip code element
+const feelingElement =document.getElementById('feelings');//pass content Element to const variable
+const cityNameElement =document.getElementById('cityName'); //Get the city name element
 const ivalidElement= document.getElementById("invalidText"); // Get the ivalid text element
 
 // Event listener to add function to existing HTML DOM element
@@ -12,49 +12,14 @@ document.getElementById('generate-btn').addEventListener('click', btnAction);
 
 /* Generate button Action function */
 function btnAction(){
-  const cityZipCode= cityZipCodeElement.value; //get the Zip Code input of the user
-  if (zipCodeValid(cityZipCode)){ //Check zip code is valid
-    generateAction(cityZipCode); //generate button action function
-  } 
-}
-// Event listener to clean the invalid text when zip code element is focused
-cityZipCodeElement.addEventListener("focus", ()=>invalidTextUpdate(""))
-/* Zip Code Validation function */
-const zipCodeValid=(zipCode)=>{
-  //Validate empty
-  if (zipCode===""){
-    invalidTextUpdate("Zip Code field is empty");
-    resetUI(); //empty UI
-    return false;
-  }
-  //Validate a number
-  else if(!validateNum(zipCode)){
-    invalidTextUpdate("Zip Code is invalid, please enter a number");
-    resetUI(); //empty UI
-    return false;
-  }
-  else {
-    invalidTextUpdate("");//empty the inValid text element
-    return true;
-  }
-}
-
-/* Validate Number function */
-const validateNum =stringInput=>{
-  const input=+stringInput; // +input return NaN if input is not a number
-  return isNaN(input)? false :true; //isNaN return true if input is number and false if Not a Number
-}
-
-/* Invalid text update function */
-function invalidTextUpdate (invalidMessage){
-  ivalidElement.textContent=invalidMessage.length===0? "":'*'+invalidMessage;
+    generateAction(cityNameElement.value); //generate button action function
 }
 
 /* Generate action function */
-const generateAction =async zipCode=>{
+const generateAction =async cityName=>{
   const feeling= document.getElementById('feelings').value; //get the user feeling input of the user and save at variable:
-  //full URL as NewYork will be http://api.openweathermap.org/data/2.5/weather?zip=10001&units=metric&appid=b8c88e3416e4d3d346d00cedd63c0c98
-   const fetchURL=apiURL+zipCode+"&units=metric"+apiKey;
+  //Full URL for cairo city https://api.openweathermap.org/data/2.5/weather?q=Cairo,EG&units=metric&appid=b8c88e3416e4d3d346d00cedd63c0c98
+   const fetchURL=apiURL+cityName+",EG&units=metric"+apiKey;
   // Create a new date instance dynamically with JS
    const d = new Date();
    const date = d.getDate()+'/'+(d.getMonth()+1)+'/'+ d.getFullYear();
@@ -125,3 +90,16 @@ const resetUI =()=>{
   tempElement.innerHTML= ""; //empty temp element
   feelingElement.innerHTML=""; ////empty feeling element
 }
+/** Feeling Elemeny listener to events focus and focus*/
+feelingElement.addEventListener('focus', ()=>feelingElement.placeholder='')
+feelingElement.addEventListener('focusout', ()=>{
+  if (feelingElement.value===''){
+    feelingElement.placeholder='Enter your feelings here';
+  }
+})
+
+
+    
+
+
+  

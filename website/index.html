@@ -1,50 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<title>Weather Journal</title>
-<link rel="stylesheet" href="style.css">
-</head>
- <body>
-   <h1 class ="headline">Weather Journal App</h1>
-   <div class="mainbar">
-     <a href="http://phaster.com/zip_code.html" target="_blank">USA cites Zip Code</a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <title>Weather Journal</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1 class ="headline">Weather Journal App</h1>
+    <div id = "app">
+      <div class ="holder-cityname">
+        <label for="cityName">Please select a city</label>
+        <select name="cityName" id="cityName">
+          <option value="Cairo" selected>Cairo</option>
+          <option value="Giza">Giza</option>
+          <option value="Alexandria">Alexandria</option>
+          <option value="Al-Mansura">al-Mansura</option>
+          <option value="Al-Minya">al-Minya</option>
+          <option value="Arish">Arish</option>
+          <option value="Aswan">Aswan</option>
+          <option value="Asyut">Asyut</option>
+          <option value="Banha">Banha</option>
+          <option value="Beni Suef">Beni Suef</option>
+          <option value="Damanhur">Damanhur</option>
+          <option value="Damietta">Damietta</option>
+          <option value="Fayyum">Fayyum</option>
+          <option value="Hurghada">Hurghada</option>
+          <option value="Ismailia">Ismailia</option>
+          <option value="Kafr ash Shaykh">Kafr el-Sheikh</option>
+          <option value="Marsa Matruh">Marsa Matruh</option>
+          <option value="Qena">Qena</option>
+          <option value="Tanta">Tanta</option>
+          <option value="Marsa Matruh">Marsa Matruh</option>
+          <option value="Zagazig">Zagazig</option>
+          <option value="Sohag">Sohag</option>
+          <option value="Al kharijah">Al kharijah</option>
+          <option value="South Sinai">South Sinai</option>
+          <option value="Suez">Suez</option>
+          <option value="Port Said">Port Said</option>
+          <option value="Luxor">Luxor</option>
+        </select>
+      </div>
+      <div class ="holder-feel">
+        <label for="feelings">How are you feeling today?</label>
+        <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here"></textarea>
+      </div>
+        <div id="generate">
+        <button id="generate-btn" type = "submit"> Generate </button>
+        </div>
+      <div class ="holder-entry">
+        <div class = "title">Most Recent Entry:</div>
+        <div id = "entryHolder">
+          <div id = "date"></div>
+          <div id = "temp"></div>
+          <div id = "feeling-entry"></div>
+        </div>
+      </div>
+      </div>
+      <div class="footer">
+        <p>Developed by Mohamed Abdelsalam</p>
+        <div class="contact">
+          <a href="https://www.linkedin.com/in/mohamedabdelsalam-automationengineer" target="_blank"><img src="img/linkedin-icon.png" alt="LinkedIn icon"> </a>
+          <a href="mailto:m.abdelsalam29@yahoo.com"><img src="img/yahoo-icon.png" alt="Yahoo icon"></a>
+        </div>
     </div>
-<div id = "app">
-  <div class ="holder-zip">
-    <label for="zip">Enter Zipcode here (in USA)<span style="color:red">*</span></label>
-    <input type="text" id="zip" placeholder="Enter zip code here" value="">
-  </div>
-  <div class ="holder-feel">
-    <label for="feelings">How are you feeling today?</label>
-    <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here"></textarea>
-  </div>
-    <div id="generate">
-    <button id="generate-btn" type = "submit"> Generate </button>
-    <div class="wrap-invalid">
-      <div id="invalidText"></div>
-    </div>
-    </div>
-  <div class ="holder-entry">
-    <div class = "title">Most Recent Entry</div>
-   <div id = "entryHolder">
-    <div id = "date"></div>
-    <div id = "temp"></div>
-    <div id = "feeling-entry"></div>
-  </div>
-  </div>
-  </div>
-  <div class="footer">
-    <p>Developed by Mohamed Abdelsalam</p>
-    <div class="contact">
-      <a href="https://www.linkedin.com/in/mohamedabdelsalam-automationengineer" target="_blank"><img src="img/linkedin-icon.png" alt="LinkedIn icon"> </a>
-      <a href="mailto:m.abdelsalam29@yahoo.com"><img src="img/yahoo-icon.png" alt="Yahoo icon"></a>
-    </div>
-</div>
-<script src="app.js" type="text/javascript"></script>
-</body>
+    <script src="app.js" type="text/javascript"></script>
+  </body>
 </html>
